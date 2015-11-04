@@ -56,6 +56,7 @@ void CSprite::Draw(int X, int Y, int vpx, int vpy)
 {
 	RECT srect;
 
+	//srect.left = 2*((_Index % _SpritePerRow)*(_Width)+1);
 	srect.left = (_Index % _SpritePerRow)*(_Width)+1;
 	srect.top = (_Index / _SpritePerRow)*(_Height)+1;
 	srect.right = srect.left + _Width ;
@@ -78,9 +79,10 @@ void CSprite::Draw(int X, int Y, int vpx, int vpy)
 	D3DXVECTOR3 p(vp_pos.x,vp_pos.y,0);
 	D3DXVECTOR3 center((float)_Width/2,(float)_Height/2,0);
 	
-	/*D3DXMATRIX mt1;
-	D3DXMatrixScaling(&mt1, 1.5, 1.5, 1);
-	_SpriteHandler->SetTransform(&mt1);*/
+	//scaling 
+	//D3DXMATRIX mt1;
+	//D3DXMatrixScaling(&mt1, 1.5, 1.5, 1);
+	//_SpriteHandler->SetTransform(&mt1);
 
 	_SpriteHandler->Draw(
 		_Image,

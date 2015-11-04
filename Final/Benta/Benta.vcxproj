@@ -96,6 +96,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="CollisionData.cpp" />
     <ClCompile Include="game.cpp" />
@@ -103,6 +104,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mario.cpp" />
     <ClCompile Include="mariogame.cpp" />
+    <ClCompile Include="mario_sample.cpp" />
     <ClCompile Include="MyObject.cpp" />
     <ClCompile Include="RECT.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
@@ -112,12 +114,14 @@
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="CollisionData.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="KeyDown.h" />
     <ClInclude Include="Mario.h" />
     <ClInclude Include="mariogame.h" />
+    <ClInclude Include="mario_sample.h" />
     <ClInclude Include="MyObject.h" />
     <ClInclude Include="RECT.h" />
     <ClInclude Include="ResourceManager.h" />

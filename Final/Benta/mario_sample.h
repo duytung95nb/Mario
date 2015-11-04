@@ -1,48 +1,41 @@
-#ifndef _MARIO_GAME_H_
-#define _MARIO_GAME_H_
+#ifndef _RECTANGLES_H_
+#define _RECTANGLES_H_
 
 #include <d3dx9.h>
 
 #include "game.h"
 #include "sprite.h"
-#include "Mario.h"
-#include "KeyDown.h"
 #include "Camera.h"
 
 
-class CMarioGame: public CGame
+class CMarioSample: public CGame
 {
 public: 
-	CMarioGame(HINSTANCE hInstance, LPWSTR Name, int Mode, int IsFullScreen, int FrameRate);
-	~CMarioGame();
+	CMarioSample(HINSTANCE hInstance, LPWSTR Name, int Mode, int IsFullScreen, int FrameRate);
+	~CMarioSample();
 
 	LPD3DXSPRITE _SpriteHandler;
 
-	//int mario_x			// position of kitty
-	//int mario_y;		
-	int xPosM;
-	int yPosM;
+	int mario_x;			// position of kitty
+	int mario_y;		
 
 	float mario_vx;			// velocity of kitty
 	float mario_vy;		
 
-	//float mario_vx_last;	// last vx of mario before stop ( to determine the direction of mario )
+	float mario_vx_last;	// last vx of mario before stop ( to determine the direction of mario )
 
 	DWORD last_time;		// this is to control the animate rate of kitty
-
+	int xc = 0;
 	//LPDIRECT3DSURFACE9 Background;
 
-	CMario * mario;
-	Camera * _Camera;
-	CSprite * brick;
-//	CSprite * mountain;
-//	CSprite * map;
-	CSprite *ground_middle;
-	CKeyDown * KeyDown;
-	CSprite *background;
+	CSprite * mario_right;
+	CSprite * mario_left;	
 
-	int xPos = 20;
-	int yPos = 20;
+	CSprite * ground_middle;		
+	CSprite * brick;
+	CSprite * mountain;
+	CSprite * map;
+	Camera	* _Camera;
 protected:
 	LPDIRECT3DSURFACE9 _Background;
 

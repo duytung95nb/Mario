@@ -9,6 +9,7 @@ protected:
 	LPDIRECT3DTEXTURE9 _Image;				// The container of all the sprites
 	LPD3DXSPRITE _SpriteHandler;			
 
+
 	int _Index;								// Current sprite index
 	int _Width;								// Sprite width
 	int _Height;							// Sprite height
@@ -16,6 +17,8 @@ protected:
 	int _SpritePerRow;						// Number of sprites per row
 public: 
 	CSprite();
+	int _posX;
+	int _posY;
 	virtual void Init(LPD3DXSPRITE SpriteHandler, LPWSTR FilePath, int Width, int Height, int Count, int SpritePerRow);
 	void Next();
 	void Reset();

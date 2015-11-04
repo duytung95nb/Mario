@@ -7,14 +7,14 @@ class CMario :public CSprite
 private:
 	bool bBig;
 	bool bRight;
-	int xPos;
-	int yPos;
 	int iSpeed = 0;
 	const int iAccelerate = 5;
 	bool isFalling = false;
 	bool isOnGround;
 	CKeyDown *KeyDown = new CKeyDown();
 public:
+	int xPos;
+	int yPos;
 	~CMario();
 	CMario();
 	// Advance to next sprite in the list

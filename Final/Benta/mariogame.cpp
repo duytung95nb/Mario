@@ -57,16 +57,24 @@ void CMarioGame::LoadResources(LPDIRECT3DDEVICE9 d3ddv)
 	mario->Init(_SpriteHandler, L"Picture/mario.bmp", 16, 16, 1386, 42);
 	brick ->Init(_SpriteHandler, BRICK, 32, 32, 1, 1);
 	ground_middle ->Init(_SpriteHandler, GROUND_MIDDLE, 3392, 460, 1, 1);
+	_Camera = new Camera(CRECT(0, 0, 800, 600));
 }
 
 int xc = 0;
 
 void CMarioGame::RenderFrame(LPDIRECT3DDEVICE9 d3ddv, int t)
 {
+	float x = _Camera->getRect().Left;
+	float y = _Camera->getRect().Top;
+	D3DXMATRIX mat;
+	D3DXVECTOR2 trans(-x, -y);
+	D3DXMatrixTransformation2D(&mat, NULL, 0.0f, NULL, NULL, 0.0f, &trans);
+	_SpriteHandler->SetTransform(&mat);
 	_SpriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
 	//int vpx = mario_x - 400;
 	//int vpx = xc;
 	//if (vpx <= 0) vpx = 0;
+	//_Camera->Update(mario);
 	mario->Update();
 	int vpx = 0 - 400;
 	ground_middle->Draw(16, 16, vpx, VIEW_PORT_Y);
